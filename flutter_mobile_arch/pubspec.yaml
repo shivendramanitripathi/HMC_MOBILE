@@ -1,0 +1,83 @@
+name: flutter_mobile_arch
+description: "A new Flutter project."
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+  flutter_secure_storage: ^9.2.2
+  flutter_svg: ^2.0.10
+  get_it: ^7.7.0
+  go_router: ^14.2.0
+  http: ^1.2.1
+  logger: ^2.3.0
+  provider: ^6.1.2
+  google_fonts: ^6.2.1
+  syncfusion_flutter_datagrid: ^26.2.11
+  connectivity_plus: ^6.0.5
+  flutter_downloader: ^1.11.8
+  intl: any
+  firebase_core: ^2.24.2
+  flutter_localizations:
+    sdk: flutter
+  firebase_messaging: ^14.7.10
+  sms_autofill: ^2.4.0
+  app_links: ^6.3.1
+  workmanager: ^0.5.2
+  animated_custom_dropdown: ^3.1.1
+  device_info_plus: ^10.0.0
+  catcher:
+  root_checker_plus: ^0.0.3
+  barcode_widget: ^2.0.4
+  qr_flutter: ^4.1.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.0.11
+  pdf: ^3.6.0
+  printing: ^5.9.0
+  excel: ^4.0.6
+  upgrader: ^11.1.0
+  flutter_local_notifications: ^17.2.2
+  permission_handler: ^11.3.1
+  timezone: ^0.9.4
+  in_app_purchase: ^3.2.0
+
+
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+  hive_generator:
+  build_runner: ^2.2.0
+  mockito:
+  analyzer:
+  flutter_test:
+    sdk: flutter
+
+
+
+flutter:
+  generate: true
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - lib/l10n/
+
+  fonts:
+
+    - family: Mulish
+      fonts:
+        - asset: assets/fonts/Mulish-Regular.ttf
+        - asset: assets/fonts/Mulish-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Mulish-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Mulish-SemiBold.ttf
+          weight: 600

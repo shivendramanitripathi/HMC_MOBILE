@@ -1,0 +1,14 @@
+{
+  "dashboard": "DashBoard",
+  "body": "Body",
+  "userID": "UserID",
+  "id": "Id",
+  "title": "Title",
+  "appName": "Mobile Arch",
+  "welcome": "Welcome",
+  "home": "Home",
+  "work": "Work",
+  "products": "Products",
+  "selectLanguage":"Select Language",
+  "account": "Account"
+}
