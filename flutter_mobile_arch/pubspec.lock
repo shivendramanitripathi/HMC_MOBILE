@@ -573,6 +573,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
+  g_json:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "5636cbdac8f3297cb85eac5ef25e6ab467536c80"
+      url: "https://github.com/DeveloperWaybee/g_json.git"
+    source: git
+    version: "4.1.0"
   get_it:
     dependency: "direct main"
     description:
