@@ -1,6 +1,11 @@
+
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mobile_arch/src/features/authentication/sign_in/provider/sign_in_provider.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:go_router/go_router.dart';
+import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../app_configs/app_colors.dart';
@@ -22,9 +27,50 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  final LocalAuthentication localAuthentication = LocalAuthentication();
+  final FlutterSecureStorage secureStorage = const FlutterSecureStorage();
+  final String _storageKey = 'isAuthenticated';
   @override
   void initState() {
+    checkAuth();
     super.initState();
+  }
+
+  Future<void> checkAuth() async {
+    bool isAvailable = await localAuthentication.canCheckBiometrics;
+    log('Biometric available: $isAvailable');
+
+    if (isAvailable) {
+      bool result = await localAuthentication.authenticate(
+        localizedReason: "Scan your fingerprint to authenticate",
+        options: const AuthenticationOptions(biometricOnly: true),
+      );
+
+      if (result) {
+        await storeAuthenticationStatus();
+        GoRouter.of(context).go('/dashboard');
+      } else {
+        log("Authentication failed or permission denied");
+      }
+    } else {
+      log("No biometrics available");
+    }
+  }
+
+  Future<void> storeAuthenticationStatus() async {
+    await secureStorage.write(key: _storageKey, value: 'true');
+    log("User authentication status stored as 'true'");
+  }
+
+  Future<void> checkStoredAuthenticationStatus() async {
+    String? isAuthenticated = await secureStorage.read(key: _storageKey);
+
+    if (isAuthenticated == 'true') {
+      log("User is already authenticated: $isAuthenticated");
+      GoRouter.of(context).go('/dashboard');
+    } else {
+      log("User is not authenticated yet or no data found");
+    }
   }
 
   @override
