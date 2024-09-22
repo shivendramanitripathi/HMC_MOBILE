@@ -45,7 +45,6 @@ class _SignInScreenState extends State<SignInScreen> {
         localizedReason: "Scan your fingerprint to authenticate",
         options: const AuthenticationOptions(biometricOnly: true),
       );
-
       if (result) {
         await storeAuthenticationStatus();
         GoRouter.of(context).go('/dashboard');
