@@ -7,11 +7,10 @@ import 'package:workmanager/workmanager.dart';
 import '../../../models/task_model.dart';
 import '../../../services/api_routes.dart';
 import '../../../services/api_service.dart';
-import '../../../services/http_interceptor.dart';
 
 class DashboardSupportProvider extends ChangeNotifier
     with PaginationController {
-  final ApiService _apiService = ApiService(HttpInterceptor());
+  // final ApiService _apiService = ApiService(HttpInterceptor());
   bool _isLoading = false;
   bool get isLoading => _isLoading;
   List<dynamic> dataList = [];
@@ -33,8 +32,6 @@ class DashboardSupportProvider extends ChangeNotifier
 
   static void callbackDispatcher() {
     Workmanager().executeTask((task, inputData) {
-      // print("Background task executed: $task");
-
       return Future.value(true);
     });
   }
@@ -61,7 +58,7 @@ class DashboardSupportProvider extends ChangeNotifier
     _isLoading = true;
     notifyListeners();
     try {
-      final response = await _apiService
+      final response = await aS
           .get('${ApiRoutes.baseUrl}/posts?_page=$currentPage&_limit=$limit');
       if (response.statusCode == 200) {
         final data = json.decode(response.body) as List;

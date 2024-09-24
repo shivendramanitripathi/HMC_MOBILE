@@ -27,7 +27,7 @@ class CustomDrawer extends StatelessWidget {
             _DrawerHeader(),
             _buildDrawerItem(
               context,
-              assetPath: AppImages.homeIcon,
+              assetPath: I.homeIcon,
               text: "Home",
               onTap: () {
                 GoRouter.of(context).go('/dashboard');
@@ -36,16 +36,17 @@ class CustomDrawer extends StatelessWidget {
             ),
             _buildDrawerItem(
               context,
-              assetPath: AppImages.alertsIcon,
+              assetPath: I.alertsIcon,
               text: "Work ",
               onTap: () {
-                GoRouter.of(context).go('/barcode');
+                // GoRouter.of(context).go('/barcode');
+                GoRouter.of(context).go('/inAppPurchase');
                 Navigator.pop(context);
               },
             ),
             _buildDrawerItem(
               context,
-              assetPath: AppImages.alertsIcon,
+              assetPath: I.alertsIcon,
               text: "Products",
               onTap: () {
                 GoRouter.of(context).go('/formScreen');
@@ -54,19 +55,21 @@ class CustomDrawer extends StatelessWidget {
             ),
             _buildDrawerItem(
               context,
-              assetPath: AppImages.settingsIcon,
-              text: "Account",
-              onTap: () {},
+              assetPath: I.settingsIcon,
+              text: "In App Purchase",
+              onTap: () {
+                GoRouter.of(context).go('/inAppPurchase');
+              },
             ),
             _buildDrawerItem(
               context,
-              assetPath: AppImages.helpIcon,
+              assetPath: I.helpIcon,
               text: "Help",
               onTap: () {},
             ),
             _buildDrawerItem(
               context,
-              assetPath: AppImages.helpIcon,
+              assetPath: I.helpIcon,
               text: "Setting",
               onTap: () {},
             ),
@@ -151,7 +154,7 @@ class __DrawerHeaderState extends State<_DrawerHeader> {
                   ),
                 ),
                 child: ClipOval(
-                  child: Image.asset(AppImages.carMenu, width: 50, height: 50),
+                  child: Image.asset(I.carMenu, width: 50, height: 50),
                 ),
               ),
               const SizedBox(width: Sizes.p8),

@@ -6,7 +6,7 @@ class InAppPurchase extends StatelessWidget {
   const InAppPurchase({super.key});
   @override
   Widget build(BuildContext context) {
-    final purchaseViewModel = Provider.of<InAppPurchaseController>(context);
+    final purchaseViewModel = Provider.of<InAppPurchaseProvider>(context);
     return Scaffold(
       body: purchaseViewModel.isAvailable
           ? _buildProductList(purchaseViewModel)
@@ -14,7 +14,7 @@ class InAppPurchase extends StatelessWidget {
     );
   }
 
-  Widget _buildProductList(InAppPurchaseController viewModel) {
+  Widget _buildProductList(InAppPurchaseProvider viewModel) {
     return ListView(
       children: viewModel.purchaseModels.map((purchase) {
         return ListTile(

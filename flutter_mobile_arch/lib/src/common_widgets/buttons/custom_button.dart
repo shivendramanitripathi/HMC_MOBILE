@@ -30,7 +30,7 @@ class CustomButton extends StatelessWidget {
         icon: Image.asset(assetName, height: 24, width: 24),
         label: Text(
           text,
-          style: xTextStyel16()
+          style: xTextStyle16()
         ),
       ),
     );

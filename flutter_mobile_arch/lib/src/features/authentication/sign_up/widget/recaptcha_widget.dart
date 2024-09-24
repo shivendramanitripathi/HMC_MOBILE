@@ -39,7 +39,7 @@ class RecaptchaWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: Sizes.p16),
             child: Image.asset(
-              AppImages.captchaIcon,
+              I.captchaIcon,
               width: 24,
               height: 24,
             ),

@@ -62,7 +62,7 @@ class CustomCountryCodeDropdown extends StatelessWidget {
                 icon: Container(
                   margin: const EdgeInsets.only(right: 8.0),
                   child: Image.asset(
-                    AppImages.arrowDownIcon,
+                    I.arrowDownIcon,
                   ),
                 ),
               ),

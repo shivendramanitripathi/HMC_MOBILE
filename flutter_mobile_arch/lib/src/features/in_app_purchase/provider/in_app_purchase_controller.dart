@@ -3,14 +3,14 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 
 import '../../../models/in_app_purchase_model.dart';
 
-class InAppPurchaseController with ChangeNotifier {
+class InAppPurchaseProvider with ChangeNotifier {
   final InAppPurchase _inAppPurchase = InAppPurchase.instance;
   bool isAvailable = false;
   List<ProductDetails> products = [];
   List<PurchaseDetails> purchases = [];
   bool purchasePending = false;
 
-  InAppPurchaseController() {
+  InAppPurchaseProvider() {
     _initialize();
   }
 

@@ -4,9 +4,15 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'http_interceptor.dart';
 
+ApiService get aS => ApiService.instance;
+
 class ApiService {
-  final HttpInterceptor _httpInterceptor;
-  ApiService(this._httpInterceptor);
+  static final ApiService instance = ApiService._privateConstructor();
+  late final HttpInterceptor _httpInterceptor;
+  ApiService._privateConstructor();
+  void setInterceptor(HttpInterceptor interceptor) {
+    _httpInterceptor = interceptor;
+  }
 
   Future<http.Response> post(String url, Map<String, dynamic> body, {Map<String, String>? headers}) async {
     final request = http.Request('POST', Uri.parse(url));
@@ -56,19 +62,20 @@ class ApiService {
     return _handleResponse(interceptedResponse);
   }
 
-  Future<http.Response> multipartPut(String url, Map<String, String> fields, File? file,
-      {Map<String, String>? headers}) async {
+  Future<http.Response> multipartPut(String url, Map<String, String> fields, File? file, {Map<String, String>? headers}) async {
     final uri = Uri.parse(url);
     final request = http.MultipartRequest('PUT', uri);
 
+    // Adding form fields
     fields.forEach((key, value) {
       request.fields[key] = value;
     });
 
+    // Adding file to request if provided
     if (file != null) {
       var stream = http.ByteStream(file.openRead());
       var length = await file.length();
-      var multipartFile = http.MultipartFile('file', stream, length, );
+      var multipartFile = http.MultipartFile('file', stream, length, filename: file.path.split('/').last);
       request.files.add(multipartFile);
     }
 
@@ -89,7 +96,7 @@ class ApiService {
         return res;
       } else {
         final responseBody = json.decode(res.body);
-        final errorMessage = responseBody['apierror']['message'] ?? 'Unknown error';
+        final errorMessage = responseBody['apierror']?['message'] ?? 'Unknown error';
         throw ApiException(res.statusCode, errorMessage);
       }
     } on http.ClientException {
@@ -110,6 +117,6 @@ class ApiException implements Exception {
 
   @override
   String toString() {
-    return message;
+    return 'Error $statusCode: $message';
   }
 }

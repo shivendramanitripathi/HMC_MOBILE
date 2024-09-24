@@ -22,7 +22,7 @@ class CustomDrawerButton extends StatelessWidget {
         elevation: 8,
       ),
       child: Image.asset(
-        AppImages.menuIcon,
+        I.menuIcon,
         width: 24,
         height: 24,
       ),

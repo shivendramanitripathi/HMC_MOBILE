@@ -1,5 +1,7 @@
+typedef I = AppImages;
+
 class AppImages {
-  AppImages._();
+  AppImages._privateConstructor();
 
   static const logo = 'assets/images/drive_connect_logo.png';
   static const arrowForward = 'assets/images/arrow_forward.png';

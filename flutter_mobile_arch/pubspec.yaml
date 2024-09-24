@@ -50,9 +50,6 @@ dependencies:
   in_app_purchase: ^3.2.0
   local_auth: ^2.3.0
   g_json:
-    git: https://github.com/DeveloperWaybee/g_json.git
-
-
 
 dev_dependencies:
   flutter_lints: ^4.0.0

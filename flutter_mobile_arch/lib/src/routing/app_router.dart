@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_mobile_arch/src/features/in_app_purchase/in_app_purchase_view.dart';
 import 'package:flutter_mobile_arch/src/routing/scaffold_with_nav_bar.dart';
 import 'package:go_router/go_router.dart';
 
@@ -55,6 +56,11 @@ class AppRouter {
           name: AppRoute.verifyByOtp.getName,
           builder: (context, state) => const VerifyOTPScreen(),
         ),
+        GoRoute(
+          path: AppRoute.inAppPurchase.getPath,
+          name: AppRoute.inAppPurchase.getName,
+          builder: (context, state) => const InAppPurchase(),
+        ),
         StatefulShellRoute.indexedStack(
           builder: (BuildContext context, GoRouterState state, StatefulNavigationShell navigationShell) {
             return ScaffoldWithNavBar(navigationShell: navigationShell);
@@ -94,6 +100,7 @@ class AppRouter {
                 ),
               ],
             ),
+
           ],
         ),
       ],

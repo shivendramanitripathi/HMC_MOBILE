@@ -25,7 +25,7 @@ class SignUpSelectionScreen extends StatelessWidget {
                 children: [
                   const SizedBox(height: Sizes.p64),
                   Image.asset(
-                    AppImages.logo,
+                    I.logo,
                     width: MediaQuery.of(context).size.width * 0.3,
                     height: MediaQuery.of(context).size.width * 0.3,
                   ),
@@ -43,7 +43,7 @@ class SignUpSelectionScreen extends StatelessWidget {
                     onPressed: () {
                       context.goNamed(AppRoute.otp.getName);
                     },
-                    imageAsset: AppImages.phoneIcon,
+                    imageAsset: I.phoneIcon,
                     isOutlined: false,
                   ),
                   const SizedBox(height: Sizes.p16),
@@ -53,7 +53,7 @@ class SignUpSelectionScreen extends StatelessWidget {
                     text: "Email",
                     onPressed: () {
                     },
-                    imageAsset: AppImages.mailIcon,
+                    imageAsset: I.mailIcon,
                     isOutlined: true,
                   ),
                 ],

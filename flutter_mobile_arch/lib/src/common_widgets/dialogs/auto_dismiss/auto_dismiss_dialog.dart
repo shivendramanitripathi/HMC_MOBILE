@@ -13,7 +13,7 @@ class AutoDismissDialog extends StatelessWidget {
   const AutoDismissDialog({
     super.key,
     required this.message,
-    this.imageAsset = AppImages.verify,
+    this.imageAsset = I.verify,
     required this.onDismiss,
     this.duration = 3, // Default to 3 seconds
   });

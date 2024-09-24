@@ -135,7 +135,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     child: Text(
                       AppLocalizations.of(context)!.userID,
                       overflow: TextOverflow.ellipsis,
-                      style: mTextStyel32(),
+                      style: mTextStyle20(),
                     ),
                   ),
                 ),
@@ -148,7 +148,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     child: Text(
                       AppLocalizations.of(context)!.id,
                       overflow: TextOverflow.ellipsis,
-                      style: mTextStyel32(),
+                      style: mTextStyle20(),
                     ),
                   ),
                 ),
@@ -161,7 +161,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     child: Text(
                       AppLocalizations.of(context)!.title,
                       overflow: TextOverflow.ellipsis,
-                      style: mTextStyel32(),
+                      style: mTextStyle20(),
                     ),
                   ),
                 ),
@@ -174,7 +174,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     child: Text(
                       AppLocalizations.of(context)!.body,
                       overflow: TextOverflow.ellipsis,
-                      style: mTextStyel32(),
+                      style: mTextStyle20(),
                     ),
                   ),
                 ),

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+typedef C = AppColors;
+
 class AppColors {
+  AppColors._privateConstructor();
+
   static const outlineBorderColor = Color(0xFF777E7F);
   static const primaryTextColor = Color(0xFF232426);
   static const secondaryTextColor = Color(0xFF252424);

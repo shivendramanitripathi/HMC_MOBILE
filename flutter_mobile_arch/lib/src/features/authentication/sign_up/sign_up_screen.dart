@@ -49,7 +49,7 @@ class _SignUpForm extends StatelessWidget {
                         children: [
                           const SizedBox(height: Sizes.p64),
                           Image.asset(
-                            AppImages.logo,
+                            I.logo,
                             width: MediaQuery.of(context).size.width * 0.3,
                             height: MediaQuery.of(context).size.width * 0.3,
                           ),

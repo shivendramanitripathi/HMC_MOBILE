@@ -14,6 +14,7 @@ import 'package:flutter_mobile_arch/src/app_configs/string/localizationprovider.
 import 'package:flutter_mobile_arch/src/common_widgets/provider/root_device.dart';
 import 'package:flutter_mobile_arch/src/features/dashboard/provider/dashboard_provider.dart';
 import 'package:flutter_mobile_arch/src/features/form/provider/visitor_provider.dart';
+import 'package:flutter_mobile_arch/src/features/in_app_purchase/provider/in_app_purchase_controller.dart';
 import 'package:flutter_mobile_arch/src/models/vistor_model.dart';
 import 'package:flutter_mobile_arch/src/common_widgets/provider/theme_provider.dart';
 import 'package:flutter_mobile_arch/src/features/authentication/sign_in/provider/sign_in_provider.dart';
@@ -113,6 +114,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ChangeNotifierProvider(create: (_) => GetIt.I<ThemeProvider>()),
         ChangeNotifierProvider(create: (_) => GetIt.I<LocalizationProvider>()),
         ChangeNotifierProvider(create: (_) => GetIt.I<RootCheckerProvider>()),
+        ChangeNotifierProvider(create: (_) => GetIt.I<InAppPurchaseProvider>()),
       ],
       child: Consumer2<ThemeProvider, LocalizationProvider>(
         builder: (context, themeProvider, localizationProvider, child) {

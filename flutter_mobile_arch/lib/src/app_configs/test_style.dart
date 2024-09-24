@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-TextStyle mTextStyel32(
+TextStyle mTextStyle20(
     {Color fontColor = Colors.white, FontWeight fontWeight = FontWeight.w500}) {
   return const TextStyle(
       fontSize: 20,
@@ -9,7 +9,7 @@ TextStyle mTextStyel32(
       fontFamily: "Mulish ");
 }
 
-TextStyle mTextStyel18(
+TextStyle mTextStyle32(
     {Color fontColor = Colors.blue, FontWeight fontWeight = FontWeight.bold}) {
   return const TextStyle(
       fontSize: 32,
@@ -19,7 +19,7 @@ TextStyle mTextStyel18(
 }
 
 
-TextStyle xTextStyel16(
+TextStyle xTextStyle16(
     {Color fontColor = Colors.blue, FontWeight fontWeight = FontWeight.bold}) {
   return const TextStyle(
       fontSize: 16,

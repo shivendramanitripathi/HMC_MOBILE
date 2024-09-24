@@ -8,7 +8,8 @@ enum AppRoute {
   dashboard('/dashboard', 'dashboard'),
   barcode('/barcode', 'barcode'),
   formScreen('/formScreen', 'formScreen'),
-  formList('formList', 'formList');
+  formList('formList', 'formList'),
+  inAppPurchase('/inAppPurchase', 'inAppPurchase');
 
   final String path;
   final String name;

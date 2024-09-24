@@ -60,7 +60,7 @@ class PrimaryButton extends StatelessWidget {
                 ),
                 imageIcon ??
                     Image.asset(
-                      AppImages.arrowForward,
+                      I.arrowForward,
                       width: 24,
                       height: 24,
                     ),
